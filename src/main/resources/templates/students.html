@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${title}" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style> table, th, td {
+    border: 1px solid black;
+	border-collapse: collapse;
+    }
+    th, td {
+    padding: 15px;
+       }
+</style>
+</head>
+<body>
+<p th:text="'Список студентов'  + '!'" />
+
+
+<table border="1" >
+    <tr>
+        <td>Фамилия </td>
+        <td>Имя</td>
+        <td>Оценка</td>
+    </tr>
+
+<div th:each="el : ${studentsall}" class="alert alert-info mt-2" >
+
+
+
+
+        <tr>
+            <td align="center"> <p th:text="${el.last_name}"/></td>
+            <td align="center"> <p th:text="${el.first_name}"/></td>
+            <td align="center"> <p th:text="${el.value}" /></td>
+
+        </tr>
+</div>
+    </table>
+
+
+
+
+
+</div>
+
+</body>
+</html>
